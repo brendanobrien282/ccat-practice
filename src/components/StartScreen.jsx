@@ -7,7 +7,7 @@ export default function StartScreen({ questions, onStart, onReset }) {
 
   return (
     <div className="card start-screen">
-      <h1>CCAT Practice</h1>
+      <h1>Brendan&apos;s CCAT Prep</h1>
       <p className="subtitle">
         Train like the real exam: {SESSION_SIZE} questions, {TIME_LIMIT_SECONDS / 60} minutes.
       </p>
