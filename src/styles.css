@@ -125,6 +125,13 @@ h2 {
   color: #e2e8f0;
 }
 
+.btn-menu {
+  margin-top: 0;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
 .btn-large {
   padding: 0.85rem 2rem;
   font-size: 1.05rem;
@@ -158,6 +165,10 @@ h2 {
   margin-bottom: 1rem;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.quiz-header .progress {
+  margin-left: auto;
 }
 
 .timer {

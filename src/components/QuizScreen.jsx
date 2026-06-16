@@ -10,6 +10,7 @@ export default function QuizScreen({
   onPrev,
   onGoTo,
   onSubmit,
+  onExit,
 }) {
   const question = questions[currentIndex];
   const selected = answers[currentIndex];
@@ -18,6 +19,9 @@ export default function QuizScreen({
   return (
     <div className="quiz-screen">
       <header className="quiz-header">
+        <button type="button" className="btn btn-ghost btn-menu" onClick={onExit}>
+          ← Back to main menu
+        </button>
         <Timer secondsLeft={secondsLeft} />
         <div className="progress">
           Question {currentIndex + 1} of {questions.length}

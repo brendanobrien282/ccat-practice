@@ -93,6 +93,15 @@ export default function App() {
     setCurrentIndex(index);
   }
 
+  function exitToMenu() {
+    setSessionQuestions([]);
+    setAnswers([]);
+    setCurrentIndex(0);
+    setSecondsLeft(TIME_LIMIT_SECONDS);
+    setResult(null);
+    setView(VIEWS.START);
+  }
+
   return (
     <main className="container">
       {view === VIEWS.START && (
@@ -115,6 +124,7 @@ export default function App() {
           onGoTo={goToQuestion}
           onPrev={() => goToQuestion(Math.max(0, currentIndex - 1))}
           onSubmit={finishTest}
+          onExit={exitToMenu}
         />
       )}
 
