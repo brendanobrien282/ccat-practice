@@ -1,0 +1,51 @@
+---
+description: Commit and push small, focused changes to GitHub frequently
+alwaysApply: true
+---
+
+# Frequent Git Commits
+
+When working on this project, save work to GitHub often in **small, focused commits** — not one large dump at the end.
+
+## When to commit
+
+Commit and push after each **logical unit of work**, for example:
+
+- One new component or utility
+- One bug fix
+- One config or styling change
+- One batch of generated data (e.g. question bank update)
+
+Do **not** wait until a full feature is done if it can be split into reviewable pieces.
+
+## Commit size
+
+- **One concern per commit** — if you changed a timer and a results screen, that's two commits
+- Keep messages short and specific: `feat: add category filter to start screen`
+- Prefer 5–15 files max per commit; often just 1–3
+
+## Push workflow
+
+After each commit:
+
+```bash
+git push origin main
+```
+
+If the remote branch doesn't exist yet, use `git push -u origin main`.
+
+Use `gh` for GitHub tasks when needed. Remote: `https://github.com/brendanobrien282/ccat-practice`
+
+## Safety (still applies)
+
+- Never force-push to `main`
+- Never commit secrets (`.env`, tokens, credentials)
+- Never skip hooks unless the user explicitly asks
+
+## Example split
+
+Instead of one commit "add quiz feature", prefer:
+
+1. `feat: add quiz session utilities`
+2. `feat: add QuizScreen component`
+3. `feat: wire quiz flow in App`
