@@ -236,6 +236,10 @@ h2 {
   color: #64748b;
 }
 
+.progress-unanswered {
+  color: #fbbf24;
+}
+
 .question-card {
   margin-bottom: 1rem;
 }

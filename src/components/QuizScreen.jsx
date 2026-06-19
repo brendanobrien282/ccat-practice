@@ -33,6 +33,9 @@ export default function QuizScreen({
         <div className="progress">
           Question {currentIndex + 1} of {questions.length}
           <span className="progress-answered"> · {answeredCount} answered</span>
+          {unansweredCount > 0 && (
+            <span className="progress-unanswered"> · {unansweredCount} unanswered</span>
+          )}
         </div>
       </header>
 
