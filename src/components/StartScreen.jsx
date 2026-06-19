@@ -5,6 +5,17 @@ export default function StartScreen({ questions, onStart, onReset }) {
   const stats = getBankStats(questions);
   const canStart = stats.remaining >= SESSION_SIZE;
 
+  const categoryCounts = questions.reduce((acc, q) => {
+    acc[q.category] = (acc[q.category] || 0) + 1;
+    return acc;
+  }, {});
+
+  const categories = [
+    { key: 'verbal', label: 'Verbal' },
+    { key: 'math', label: 'Math & logic' },
+    { key: 'spatial', label: 'Spatial' },
+  ];
+
   return (
     <div className="card start-screen">
       <h1>Brendan&apos;s CCAT Prep</h1>
@@ -26,6 +37,14 @@ export default function StartScreen({ questions, onStart, onReset }) {
           <span className="stat-value">{Math.floor(stats.remaining / SESSION_SIZE)}</span>
           <span className="stat-label">Full runs left</span>
         </div>
+      </div>
+
+      <div className="category-breakdown">
+        {categories.map(({ key, label }) => (
+          <span key={key} className="category-pill">
+            {label}: {categoryCounts[key] || 0}
+          </span>
+        ))}
       </div>
 
       {!canStart ? (

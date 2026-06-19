@@ -83,6 +83,23 @@ h2 {
   letter-spacing: 0.04em;
 }
 
+.category-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.category-pill {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
 .btn {
   border: none;
   border-radius: 8px;
