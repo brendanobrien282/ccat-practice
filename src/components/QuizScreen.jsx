@@ -15,11 +15,18 @@ export default function QuizScreen({
   const question = questions[currentIndex];
   const selected = answers[currentIndex];
   const answeredCount = answers.filter((a) => a !== null).length;
+  const unansweredCount = questions.length - answeredCount;
+
+  function handleExit() {
+    if (window.confirm('Leave this test? Your answers will not be saved.')) {
+      onExit();
+    }
+  }
 
   return (
     <div className="quiz-screen">
       <header className="quiz-header">
-        <button type="button" className="btn btn-ghost btn-menu" onClick={onExit}>
+        <button type="button" className="btn btn-ghost btn-menu" onClick={handleExit}>
           ← Back to main menu
         </button>
         <Timer secondsLeft={secondsLeft} />
