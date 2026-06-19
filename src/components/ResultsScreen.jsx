@@ -18,7 +18,7 @@ export default function ResultsScreen({ result, timeUsedSeconds, onRestart, onHo
             New practice test
           </button>
           <button type="button" className="btn btn-secondary" onClick={onHome}>
-            Back to home
+            Back to main menu
           </button>
         </div>
       </div>
