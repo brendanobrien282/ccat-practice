@@ -11,6 +11,7 @@ export default function StartScreen({ questions, onStart, onReset }) {
       <p className="subtitle">
         Train like the real exam: {SESSION_SIZE} questions, {TIME_LIMIT_SECONDS / 60} minutes.
       </p>
+      <p className="pass-hint">Most employers look for a score of at least 28/50.</p>
 
       <div className="stats-grid">
         <div className="stat">
