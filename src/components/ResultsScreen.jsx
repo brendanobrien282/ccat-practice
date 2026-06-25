@@ -3,11 +3,15 @@ import { formatTime } from '../utils/quiz';
 export default function ResultsScreen({ result, timeUsedSeconds, onRestart, onHome }) {
   const { correct, total, wrong } = result;
   const pct = Math.round((correct / total) * 100);
+  const passed = correct >= 28;
 
   return (
     <div className="results-screen">
       <div className="card results-summary">
         <h1>Test complete</h1>
+        <span className={`pass-badge ${passed ? 'pass-badge-pass' : 'pass-badge-fail'}`}>
+          {passed ? 'Passing score' : 'Below passing score'}
+        </span>
         <div className="score-circle">
           <span className="score-value">{correct}/{total}</span>
           <span className="score-pct">{pct}%</span>
