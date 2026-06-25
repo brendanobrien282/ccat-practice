@@ -79,7 +79,7 @@ export default function QuizScreen({
           <button
             key={q.id}
             type="button"
-            className={`dot ${index === currentIndex ? 'dot-active' : ''} ${answers[index] !== null ? 'dot-answered' : ''}`}
+            className={`dot ${index === currentIndex ? 'dot-active' : ''} ${answers[index] !== null ? 'dot-answered' : 'dot-unanswered'}`}
             onClick={() => onGoTo(index)}
             aria-label={`Go to question ${index + 1}`}
           />

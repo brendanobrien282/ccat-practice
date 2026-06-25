@@ -356,6 +356,10 @@ h2 {
   background: #0284c7;
 }
 
+.dot-unanswered {
+  background: #78350f;
+}
+
 .dot-active {
   background: #f8fafc;
   transform: scale(1.3);
