@@ -22,6 +22,8 @@ const VIEWS = {
   RESULTS: 'results',
 };
 
+const PAGE_TITLE = "Brendan's CCAT Prep";
+
 export default function App() {
   const [view, setView] = useState(VIEWS.START);
   const [sessionQuestions, setSessionQuestions] = useState([]);
@@ -54,6 +56,16 @@ export default function App() {
 
     return () => clearInterval(timer);
   }, [view, secondsLeft, finishTest]);
+
+  useEffect(() => {
+    if (view === VIEWS.QUIZ && sessionQuestions.length > 0) {
+      document.title = `Q ${currentIndex + 1}/${sessionQuestions.length} · ${PAGE_TITLE}`;
+    } else if (view === VIEWS.RESULTS) {
+      document.title = `Results · ${PAGE_TITLE}`;
+    } else {
+      document.title = PAGE_TITLE;
+    }
+  }, [view, currentIndex, sessionQuestions.length]);
 
   function startTest() {
     const { questions: picked, exhausted } = pickSessionQuestions(
