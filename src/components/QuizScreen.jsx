@@ -23,6 +23,14 @@ export default function QuizScreen({
     }
   }
 
+  function handleSubmit() {
+    if (unansweredCount > 0) {
+      const msg = `You have ${unansweredCount} unanswered question${unansweredCount === 1 ? '' : 's'}. Submit anyway?`;
+      if (!window.confirm(msg)) return;
+    }
+    onSubmit();
+  }
+
   return (
     <div className="quiz-screen">
       <header className="quiz-header">
@@ -68,7 +76,7 @@ export default function QuizScreen({
             Next
           </button>
         ) : (
-          <button type="button" className="btn btn-primary" onClick={onSubmit}>
+          <button type="button" className="btn btn-primary" onClick={handleSubmit}>
             Submit test
           </button>
         )}
